@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public float speed;
     private bool moving;
     private Vector3 newPosition;
+    private Vector2 touchStartPos;
+    private float swipeSensitivity = 50f;
 
     private BoardCube boardPos;
  
@@ -95,10 +97,60 @@ public class Player : MonoBehaviour
                 Move(Vector3.right);
             }
 
+            DetectarDeslizamientoTactil();
+
         }
     }
 
-    private void FixedUpdate()      //servia para actualizar el juego con un delta siempre igual (aqui se mueve el pers)
+    private void DetectarDeslizamientoTactil()
+    {
+        Debug.Log("holiwiwiwiwi");
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Debug.Log("holiwi");
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    touchStartPos = touch.position;
+                    break;
+
+                case TouchPhase.Moved:
+                    Vector2 swipeDelta = touch.position - touchStartPos;
+
+                    if (swipeDelta.magnitude > swipeSensitivity)
+                    {
+                        if (Mathf.Abs(swipeDelta.x) > Mathf.Abs(swipeDelta.y))
+                        {
+                            if (swipeDelta.x > 0)
+                            {
+                                Move(Vector3.right);
+                            }
+                            else
+                            {
+                                Move(Vector3.left);
+                            }
+                        }
+                        else
+                        {
+                            if (swipeDelta.y > 0)
+                            {
+                                Move(Vector3.forward);
+                            }
+                            else
+                            {
+                                Move(Vector3.back);
+                            }
+                        }
+
+                        touchStartPos = touch.position;
+                    }
+                    break;
+            }
+        }
+    }
+        private void FixedUpdate()      //servia para actualizar el juego con un delta siempre igual (aqui se mueve el pers)
     {
 
 
