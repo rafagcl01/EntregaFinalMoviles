@@ -1,11 +1,12 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI powerText;
-    public PauseManager menuPausa;
+    [SerializeField] GameObject PauseMenu;
 
     public Player player;
     public bool Paused = false;
@@ -30,8 +31,32 @@ public class GameManager : MonoBehaviour
         {
             powerText.text = "Poder: " + playerPower;
         }
-  
-        
 
+
+
+    }
+
+
+
+    ///////////////////////////////////// PAUSE
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+    }
+
+    public void Resume()
+    {
+        Paused = false;
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void PauseGame()
+    {
+        Paused = true;
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
