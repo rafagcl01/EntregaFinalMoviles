@@ -538,10 +538,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 44.75
   m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2928,7 +2928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.72900003, y: 0.8002416}
   m_AnchorMax: {x: 0.97475016, y: 0.94289035}
-  m_AnchoredPosition: {x: -1.6000061, y: 0.59999084}
+  m_AnchoredPosition: {x: -1.6000366, y: 0.5999756}
   m_SizeDelta: {x: -46.720802, y: -8.589087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196401646
@@ -4218,6 +4218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraController: {fileID: 1478977674}
   speed: 1
+  playerBody: {fileID: 0}
 --- !u!114 &281252353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8097,9 +8098,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerText: {fileID: 1556587320}
   PauseMenu: {fileID: 1861336402}
-  player: {fileID: 961380503}
+  player: {fileID: 281252352}
   Paused: 0
   playerPower: 0
+  shakeThreshold: 2
+  ChangeCooldown: 2
 --- !u!1 &591086363
 GameObject:
   m_ObjectHideFlags: 0
@@ -9004,8 +9007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 387, y: -186}
-  m_SizeDelta: {x: 387.7321, y: 68.1218}
+  m_AnchoredPosition: {x: 175.84, y: -78.933}
+  m_SizeDelta: {x: 159.05, y: 27.922}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630619960
 MonoBehaviour:
@@ -15178,6 +15181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraController: {fileID: 1478977674}
   speed: 5
+  playerBody: {fileID: 0}
 --- !u!23 &961380505
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21229,10 +21233,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 24.95
   m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -21971,10 +21975,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 27
   m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -23607,10 +23611,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 24.95
   m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -23742,10 +23746,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 44.75
   m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

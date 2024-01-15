@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour
     private int last;
     private int now;
 
+    public float shakeThreshold = 2.0f;     //ajustar para agitar el movil
+    public float ChangeCooldown = 1.5f; //cooldown entre cambios
+
+    private float lastChangeTime;
+
+
     private void Awake()
     {
 
@@ -32,7 +38,11 @@ public class GameManager : MonoBehaviour
             powerText.text = "Poder: " + playerPower;
         }
 
-
+        if (Input.acceleration.magnitude > shakeThreshold && Time.time - lastChangeTime >= ChangeCooldown)
+        {
+            player.Swap();
+            lastChangeTime = Time.time;
+        }
 
     }
 
@@ -59,4 +69,9 @@ public class GameManager : MonoBehaviour
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
+
+
+
+
+
 }

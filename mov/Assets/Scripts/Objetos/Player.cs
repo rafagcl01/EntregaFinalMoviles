@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
 
     private string tablero = "normal";
     private Vector3 saltoTablero = new Vector3(0, 50, 0);
-    private Vector3 prueba;
     public float speed;
     private bool moving;
     private Vector3 newPosition;
@@ -20,7 +19,7 @@ public class Player : MonoBehaviour
     private float swipeSensitivity = 50f;
 
     private BoardCube boardPos;
- 
+    public GameObject playerBody;
 
 
 
@@ -28,6 +27,7 @@ public class Player : MonoBehaviour
     {
         World = FindAnyObjectByType<GameManager>();
         //CameraController = FindAnyObjectByType<CameraManager>();
+        playerBody = this.gameObject;
     }
 
     public void Move(Vector3 direction)     //al implementar el interfaz, es obligado a implementar sus metodos
@@ -48,15 +48,14 @@ public class Player : MonoBehaviour
             //CAMBIAR TABLERO
             if (tablero == "normal")
             {
-                prueba = transform.position + saltoTablero;
                 tablero = "inverso";
-                transform.position = prueba;
+                playerBody.transform.position = playerBody.transform.position + saltoTablero;
                 CameraController.UpdateCamera(tablero);
             }
             else if (tablero == "inverso")
             {
                 tablero = "normal";
-                transform.position = transform.position - saltoTablero;
+                playerBody.transform.position = playerBody.transform.position - saltoTablero;
                 CameraController.UpdateCamera(tablero);
             }
 
@@ -150,11 +149,11 @@ public class Player : MonoBehaviour
             }
         }
     }
-        private void FixedUpdate()      //servia para actualizar el juego con un delta siempre igual (aqui se mueve el pers)
+    private void FixedUpdate()      //servia para actualizar el juego con un delta siempre igual (aqui se mueve el pers)
     {
 
 
-        
+
 
         if (moving)     //moving se implementa siguiendo el patron dirtyflag solo para cuando se quiere mover el pers
         {
