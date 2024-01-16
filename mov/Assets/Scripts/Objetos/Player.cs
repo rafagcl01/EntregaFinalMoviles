@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
 
     private void DetectarDeslizamientoTactil()
     {
-        Debug.Log("holiwiwiwiwi");
+        // Debug.Log("holiwiwiwiwi");
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);

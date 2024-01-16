@@ -17,41 +17,51 @@ public class menuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-    
 
 
-    public void IniciarScenaJuego()
+
+    public void IniciarLvl1()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level1");
+    }
+    public void IniciarLvl2()
+    {
+        SceneManager.LoadScene("Level2");
     }
 
     public void Awake()
     {
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("EndScene")){
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("EndScene"))
+        {
 
             condicionPantalla = DeathManager.Instance.causeOfDeath;
             textoVictoria = GameObject.Find("Victoria");
             textoZombie = GameObject.Find("DerrotaEnemigo");
             textoObstaculo = GameObject.Find("DerrotaObstaculo");
 
-            if(condicionPantalla == "obstaculo"){
+            if (condicionPantalla == "obstaculo")
+            {
                 textoVictoria.SetActive(false);
                 textoZombie.SetActive(false);
                 textoObstaculo.SetActive(true);
 
-            } else if(condicionPantalla == "zombie"){
+            }
+            else if (condicionPantalla == "zombie")
+            {
                 textoVictoria.SetActive(false);
                 textoZombie.SetActive(true);
                 textoObstaculo.SetActive(false);
-        
-            } else if(condicionPantalla == "victoria"){
+
+            }
+            else if (condicionPantalla == "victoria")
+            {
                 textoVictoria.SetActive(true);
                 textoZombie.SetActive(false);
-                textoObstaculo.SetActive(false);       
-        
+                textoObstaculo.SetActive(false);
+
             }
         }
     }
 
-   
+
 }

@@ -30,7 +30,7 @@ public class RaycastComponent : MonoBehaviour
             Renderer renderer = onCube.GetComponent<Renderer>();
             Material currentMaterial = renderer.material;
 
-            Debug.Log(onCube.currentMaterial.name);
+            //Debug.Log(onCube.currentMaterial.name);
 
             if (onCube.obstacle == true)
             {
