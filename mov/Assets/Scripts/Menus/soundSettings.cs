@@ -18,6 +18,7 @@ public class soundSettings : MonoBehaviour
 
     void Start()
     {
+        /*
         //miramos si ya hay algun valor guardado para los sliders
         if (PlayerPrefs.HasKey("masterVol"))
         {
@@ -35,7 +36,7 @@ public class soundSettings : MonoBehaviour
             LoadSoundtrack();
         }
         else { SetSoundtrackVolume(); }
-
+        */
     }
 
     //cargamos los valores si los hay
