@@ -1365,7 +1365,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159374874}
-  - component: {fileID: 159374875}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -1542,18 +1541,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &159374875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159374873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c66ea89f8c4426be16e26cd0604b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &163004478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2544197801288173399, guid: f5cc5c68c34db0847aa86bb6c0c9e5e9, type: 3}
@@ -21493,7 +21480,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1887325398}
-  - component: {fileID: 1887325397}
   m_Layer: 0
   m_Name: Board Inverso
   m_TagString: Untagged
@@ -21501,18 +21487,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1887325397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887325396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c66ea89f8c4426be16e26cd0604b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1887325398
 Transform:
   m_ObjectHideFlags: 0
