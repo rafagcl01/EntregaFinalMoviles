@@ -10,17 +10,18 @@ using UnityEngine.SceneManagement;
 public class RaycastComponent : MonoBehaviour
 {
 
+    private bool isFalling = false;
+
     public void Update()
     {
 
         RaycastHit hit;
-
-
         string Terreno;
 
+        isFalling = false;
 
         //raycast para detectar el tipo de terreno sobre el que está el jugador
-        if (Physics.Raycast(transform.position, Vector3.down, out hit))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
         {
             BoardCube onCube = hit.collider.GetComponent<BoardCube>();
             //dDebug.Log("detectado el cubo" + onCube.Row + onCube.Col);
@@ -50,8 +51,24 @@ public class RaycastComponent : MonoBehaviour
             }
 
         }
+        else
+        {
+            if (!isFalling)
+            {
+                isFalling = true;
+                Invoke("compruebaCaida", 1.5f); //para comprobar que siga cayendo 1 segundo despues
+            }
+        }
 
 
+    }
+    void compruebaCaida()
+    {
+        if (isFalling)
+        {
+            DeathManager.Instance.causeOfDeath = "obstaculo";
+            SceneManager.LoadScene("EndScene");
+        }
     }
 }
 

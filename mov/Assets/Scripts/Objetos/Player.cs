@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,8 +16,12 @@ public class Player : MonoBehaviour
     private Vector2 touchStartPos;
     private float swipeSensitivity = 50f;
 
-    private BoardCube boardPos;
+
     public GameObject playerBody;
+
+
+
+
 
 
 
@@ -97,8 +100,11 @@ public class Player : MonoBehaviour
 
             DetectarDeslizamientoTactil();
 
+
         }
     }
+
+
 
     private void DetectarDeslizamientoTactil()
     {
@@ -148,31 +154,30 @@ public class Player : MonoBehaviour
             }
         }
     }
-    private void FixedUpdate()      //servia para actualizar el juego con un delta siempre igual (aqui se mueve el pers)
+    private void FixedUpdate()
     {
 
-
-
-
-        if (moving)     //moving se implementa siguiendo el patron dirtyflag solo para cuando se quiere mover el pers
+        if (moving)
         {
             transform.position = Vector3.MoveTowards(transform.position, newPosition,
                 speed * Time.fixedDeltaTime);
 
+            float diff = 0.5f;
+
             //ROTAR EL PERSONAJE
-            if (newPosition.x > transform.position.x)
+            if (newPosition.x > transform.position.x && Mathf.Abs(newPosition.x - transform.position.x) > diff)
             {
                 transform.eulerAngles = new Vector3(0, 90, 0);
             }
-            if (newPosition.x < transform.position.x)
+            if (newPosition.x < transform.position.x && Mathf.Abs(newPosition.x - transform.position.x) > diff)
             {
                 transform.eulerAngles = new Vector3(0, 270, 0);
             }
-            if (newPosition.z > transform.position.z)
+            if (newPosition.z > transform.position.z && Mathf.Abs(newPosition.z - transform.position.z) > diff)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
-            if (newPosition.z < transform.position.z)
+            if (newPosition.z < transform.position.z && Mathf.Abs(newPosition.z - transform.position.z) > diff)
             {
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
@@ -185,7 +190,7 @@ public class Player : MonoBehaviour
             {
                 transform.position = newPosition;
                 moving = false;
-                //animator.SetFloat(MoveSpeed, 0);
+
             }
         }
 
@@ -193,7 +198,6 @@ public class Player : MonoBehaviour
 
     }
 
-    ////////////////// IMPLEMENTACION SUJETO ////////////////////////////
 
 
 }
