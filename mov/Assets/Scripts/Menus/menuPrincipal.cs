@@ -28,6 +28,10 @@ public class menuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
     }
+    public void IniciarLvl3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
 
     public void Awake()
     {

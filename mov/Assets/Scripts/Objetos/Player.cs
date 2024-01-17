@@ -7,7 +7,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     GameManager World;
-    Board board;
     public CameraManager CameraController;
 
     private string tablero = "normal";
