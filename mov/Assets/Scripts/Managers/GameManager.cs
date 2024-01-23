@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     private int last;
     private int now;
 
-    public float shakeThreshold = 2.0f;     //ajustar para agitar el movil
-    public float ChangeCooldown = 1f; //cooldown entre cambios
+    public float shakeThreshold = 1f;     //ajustar para agitar el movil
+    public float ChangeCooldown = 0.5f; //cooldown entre cambios
 
     private float lastChangeTime;
 
